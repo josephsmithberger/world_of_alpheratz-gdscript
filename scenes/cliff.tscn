@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo2w3wgcimbq5"]
 
-[ext_resource type="Script" path="res://scripts/Cliff.cs" id="1_mbthn"]
+[ext_resource type="Script" path="res://scripts/cliff.gd" id="1_mbthn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gkv2d"]
 

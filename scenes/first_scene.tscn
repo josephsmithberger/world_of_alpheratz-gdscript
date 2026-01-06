@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ct137uwtj6xhx"]
 
-[ext_resource type="Script" path="res://scripts/FirstScene.cs" id="1_ui72l"]
+[ext_resource type="Script" path="res://scripts/first_scene.gd" id="1_ui72l"]
 [ext_resource type="FontFile" uid="uid://g0840nh810ty" path="res://font/at01.ttf" id="2_gunuj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ruhi"]

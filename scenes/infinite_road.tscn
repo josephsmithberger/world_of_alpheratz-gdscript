@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://kjmpyycjo34"]
 
-[ext_resource type="Script" path="res://scripts/InfiniteRoad.cs" id="1_dlcwi"]
+[ext_resource type="Script" path="res://scripts/infinite_road.gd" id="1_dlcwi"]
 [ext_resource type="TileSet" uid="uid://daay1h6wcq6kj" path="res://resources/tileset_level_1.tres" id="1_g8pvr"]
 
-[node name="InfiniteRoad" type="Node2D" node_paths=PackedStringArray("chunkProto")]
+[node name="InfiniteRoad" type="Node2D" node_paths=PackedStringArray("chunk_proto")]
 script = ExtResource("1_dlcwi")
-chunkProto = NodePath("TileMap")
+chunk_proto = NodePath("TileMap")
 metadata/_edit_horizontal_guides_ = [610.0]
 
 [node name="TileMap" type="TileMap" parent="."]

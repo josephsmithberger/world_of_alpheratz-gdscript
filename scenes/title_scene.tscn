@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://btunb0s2pkqp6"]
 
 [ext_resource type="Texture2D" uid="uid://cky6ed4im046" path="res://images/Grassland_5 - Sky_color.png" id="1_8fguj"]
-[ext_resource type="Script" path="res://scripts/TitleScene.cs" id="1_31re5"]
+[ext_resource type="Script" path="res://scripts/title_scene.gd" id="1_31re5"]
 [ext_resource type="PackedScene" uid="uid://cmas72b0mdbmi" path="res://scenes/game_menu.tscn" id="1_kv5vj"]
 [ext_resource type="Texture2D" uid="uid://dwmrcdo2ublpk" path="res://images/Grassland_4 - Cloud_cover_2.png" id="2_einia"]
 [ext_resource type="Texture2D" uid="uid://d251fg2jk2oo7" path="res://images/Grassland_3 - Cloud_cover_1.png" id="3_co40g"]
@@ -196,7 +196,7 @@ stretch_mode = 5
 position = Vector2(217, 254)
 ACCELERATION = 150.0
 MAX_SPEED = 42.0
-scriptedInput = true
+scripted_input = true
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(63, -57)

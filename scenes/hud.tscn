@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://c3n15xfsang0g"]
 
-[ext_resource type="Script" path="res://scripts/HUD.cs" id="1_4ghwa"]
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_4ghwa"]
 [ext_resource type="Texture2D" uid="uid://belppt0beoqpo" path="res://images/Health_Indicator_Black_Outline (8 x 8).png" id="2_wk0au"]
 [ext_resource type="PackedScene" uid="uid://ddt1gb5nygs14" path="res://scenes/score_board.tscn" id="3_8wske"]
 [ext_resource type="Texture2D" uid="uid://by1i81o8nm12g" path="res://images/Timer_Coin_Numbers_Outlined (8 x 8).png" id="3_i7cfw"]
@@ -47,12 +47,12 @@ resource_local_to_scene = true
 atlas = ExtResource("3_i7cfw")
 region = Rect2(48, 8, 8, 8)
 
-[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("heartProto", "heartContainer", "remainTime", "collectedCoins")]
+[node name="HUD" type="CanvasLayer" node_paths=PackedStringArray("heart_proto", "heart_container", "remain_time", "collected_coins")]
 script = ExtResource("1_4ghwa")
-heartProto = NodePath("HeartEmpty")
-heartContainer = NodePath("HBoxContainer4/HBoxContainer")
-remainTime = NodePath("HBoxContainer4/ScoreBoardTime")
-collectedCoins = NodePath("HBoxContainer4/ScoreBoardCoins")
+heart_proto = NodePath("HeartEmpty")
+heart_container = NodePath("HBoxContainer4/HBoxContainer")
+remain_time = NodePath("HBoxContainer4/ScoreBoardTime")
+collected_coins = NodePath("HBoxContainer4/ScoreBoardCoins")
 
 [node name="HeartEmpty" type="TextureRect" parent="."]
 visible = false

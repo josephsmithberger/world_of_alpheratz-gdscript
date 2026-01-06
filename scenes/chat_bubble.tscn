@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7yd2iv57o66s" path="res://images/chatbubble.png" id="1_yt8s8"]
 [ext_resource type="FontFile" uid="uid://g0840nh810ty" path="res://font/at01.ttf" id="2_1e528"]
 [ext_resource type="Texture2D" uid="uid://bwjmee3mhpng1" path="res://images/chatbubble_tail.png" id="2_03o64"]
-[ext_resource type="Script" path="res://scripts/ChatBubble.cs" id="2_6y4rj"]
+[ext_resource type="Script" path="res://scripts/chat_bubble.gd" id="2_6y4rj"]
 
 [sub_resource type="FontVariation" id="FontVariation_ivtrr"]
 base_font = ExtResource("2_1e528")

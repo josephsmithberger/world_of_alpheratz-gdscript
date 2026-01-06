@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://cmas72b0mdbmi"]
 
-[ext_resource type="Script" path="res://scripts/GameMenu.cs" id="1_u36yv"]
+[ext_resource type="Script" path="res://scripts/game_menu.gd" id="1_u36yv"]
 [ext_resource type="Texture2D" uid="uid://dtmwhnsc4msjk" path="res://images/border.png" id="2_dne06"]
-[ext_resource type="Script" path="res://scripts/RemapButton.cs" id="2_dnf8m"]
+[ext_resource type="Script" path="res://scripts/remap_button.gd" id="2_dnf8m"]
 [ext_resource type="PackedScene" uid="uid://b1p51duu5p5tf" path="res://scenes/main_menu_button.tscn" id="3_axtap"]
 [ext_resource type="FontFile" uid="uid://g0840nh810ty" path="res://font/at01.ttf" id="3_mpeam"]
 [ext_resource type="Texture2D" uid="uid://d30gaflckswk2" path="res://images/link.png" id="4_bns63"]
@@ -29,24 +29,24 @@ shadow_color = Color(0, 0, 0, 0.12549)
 font = ExtResource("3_mpeam")
 font_size = 24
 
-[node name="GameMenu" type="CanvasLayer" node_paths=PackedStringArray("topMenu", "settingsMenu", "keyConfigMenu", "startButton", "settingsButton", "aboutButton", "quitButton", "settingsBackButton", "keyConfigButton", "keyConfigBackButton", "resetKeysButton", "seVolumeSlider", "bgmVolumeSlider", "menuOpacitySlider", "resetMiscButton", "background")]
+[node name="GameMenu" type="CanvasLayer" node_paths=PackedStringArray("top_menu", "settings_menu", "key_config_menu", "start_button", "settings_button", "about_button", "quit_button", "settings_back_button", "key_config_button", "key_config_back_button", "reset_keys_button", "se_volume_slider", "bgm_volume_slider", "menu_opacity_slider", "reset_misc_button", "background")]
 script = ExtResource("1_u36yv")
-topMenu = NodePath("TopMenu")
-settingsMenu = NodePath("Settings")
-keyConfigMenu = NodePath("KeyConfig")
-startButton = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button")
-settingsButton = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button2")
-aboutButton = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button3")
-quitButton = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button4")
-settingsBackButton = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button3")
-keyConfigButton = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button2")
-keyConfigBackButton = NodePath("KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button2")
-resetKeysButton = NodePath("KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button")
-seVolumeSlider = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/HSlider")
-bgmVolumeSlider = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/HSlider2")
-menuOpacitySlider = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer3/HSlider3")
-windowScaleButtons = SubResource("ButtonGroup_8c4ww")
-resetMiscButton = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button")
+top_menu = NodePath("TopMenu")
+settings_menu = NodePath("Settings")
+key_config_menu = NodePath("KeyConfig")
+start_button = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button")
+settings_button = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button2")
+about_button = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button3")
+quit_button = NodePath("TopMenu/NinePatchRect/MarginContainer/VBoxContainer/Button4")
+settings_back_button = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button3")
+key_config_button = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button2")
+key_config_back_button = NodePath("KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button2")
+reset_keys_button = NodePath("KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button")
+se_volume_slider = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer/HSlider")
+bgm_volume_slider = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer2/HSlider2")
+menu_opacity_slider = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/HBoxContainer3/HSlider3")
+window_scale_buttons = SubResource("ButtonGroup_8c4ww")
+reset_misc_button = NodePath("Settings/Panel/NinePatchRect/MarginContainer/VBoxContainer/Button")
 background = NodePath("BG")
 
 [node name="BG" type="ColorRect" parent="."]
@@ -340,7 +340,7 @@ theme_override_fonts/font = ExtResource("3_mpeam")
 theme_override_font_sizes/font_size = 24
 toggle_mode = true
 script = ExtResource("2_dnf8m")
-inputAction = "up"
+input_action = "up"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -359,7 +359,7 @@ theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "Key W"
 script = ExtResource("2_dnf8m")
-inputAction = "down"
+input_action = "down"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -378,7 +378,7 @@ theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "Key W"
 script = ExtResource("2_dnf8m")
-inputAction = "left"
+input_action = "left"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -397,7 +397,7 @@ theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "Key W"
 script = ExtResource("2_dnf8m")
-inputAction = "right"
+input_action = "right"
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -416,7 +416,7 @@ theme_override_font_sizes/font_size = 24
 toggle_mode = true
 text = "Key W"
 script = ExtResource("2_dnf8m")
-inputAction = "interact"
+input_action = "interact"
 
 [node name="Button" type="Button" parent="KeyConfig/Panel/NinePatchRect/MarginContainer/VBoxContainer"]
 layout_mode = 2

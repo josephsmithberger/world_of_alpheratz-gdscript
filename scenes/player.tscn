@@ -1,9 +1,9 @@
 [gd_scene load_steps=15 format=3 uid="uid://b0jkgjw7uy2i2"]
 
-[ext_resource type="Script" path="res://scripts/PlatformerPlayer.cs" id="1_cpe0l"]
+[ext_resource type="Script" path="res://scripts/platformer_player.gd" id="1_cpe0l"]
 [ext_resource type="SpriteFrames" uid="uid://bfc8uumysdqg" path="res://resources/sprite_frames_player.tres" id="2_fba1q"]
 [ext_resource type="PackedScene" uid="uid://dcfopri73pp7h" path="res://scenes/emo_bubble.tscn" id="3_ko3q2"]
-[ext_resource type="Script" path="res://scripts/Killer.cs" id="4_4ppsc"]
+[ext_resource type="Script" path="res://scripts/killer.gd" id="4_4ppsc"]
 [ext_resource type="Texture2D" uid="uid://cnnxrj8xeh7xl" path="res://images/Dust (16 x 16).png" id="5_ufpxr"]
 [ext_resource type="PackedScene" uid="uid://boihckp5wsd6f" path="res://scenes/chat_bubble.tscn" id="6_8lg8a"]
 
@@ -61,18 +61,18 @@ size = Vector2(12, 18)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0h5dk"]
 size = Vector2(12, 3)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite", "spriteContainer", "collisionShape2D", "emoBubble", "mobKiller", "leftWalkingDustParticles", "rightWalkingDustParticles", "chatBubble")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite", "sprite_container", "collision_shape_2d", "emo_bubble", "mob_killer", "left_walking_dust_particles", "right_walking_dust_particles", "chat_bubble")]
 texture_filter = 1
 collision_layer = 2
 script = ExtResource("1_cpe0l")
-animatedSprite = NodePath("Node2D/AnimatedSprite2D")
-spriteContainer = NodePath("Node2D")
-collisionShape2D = NodePath("CollisionShape2D")
-emoBubble = NodePath("EmoBubble")
-mobKiller = NodePath("Killer")
-leftWalkingDustParticles = NodePath("LeftDustParticles2")
-rightWalkingDustParticles = NodePath("RightDustParticles")
-chatBubble = NodePath("ChatBubble")
+animated_sprite = NodePath("Node2D/AnimatedSprite2D")
+sprite_container = NodePath("Node2D")
+collision_shape_2d = NodePath("CollisionShape2D")
+emo_bubble = NodePath("EmoBubble")
+mob_killer = NodePath("Killer")
+left_walking_dust_particles = NodePath("LeftDustParticles2")
+right_walking_dust_particles = NodePath("RightDustParticles")
+chat_bubble = NodePath("ChatBubble")
 
 [node name="ChatBubble" parent="." instance=ExtResource("6_8lg8a")]
 anchors_preset = 0

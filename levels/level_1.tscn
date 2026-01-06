@@ -1,22 +1,22 @@
 [gd_scene load_steps=61 format=3 uid="uid://byxvnmjsoey5f"]
 
 [ext_resource type="TileSet" uid="uid://daay1h6wcq6kj" path="res://resources/tileset_level_1.tres" id="1_ptem6"]
-[ext_resource type="Script" path="res://scripts/Level1.cs" id="1_stky7"]
+[ext_resource type="Script" path="res://scripts/level_1.gd" id="1_stky7"]
 [ext_resource type="PackedScene" uid="uid://b0jkgjw7uy2i2" path="res://scenes/player.tscn" id="2_njbxm"]
 [ext_resource type="Texture2D" uid="uid://cky6ed4im046" path="res://images/Grassland_5 - Sky_color.png" id="4_ck6wr"]
 [ext_resource type="Texture2D" uid="uid://dwmrcdo2ublpk" path="res://images/Grassland_4 - Cloud_cover_2.png" id="5_m2ui1"]
 [ext_resource type="Texture2D" uid="uid://d251fg2jk2oo7" path="res://images/Grassland_3 - Cloud_cover_1.png" id="6_ba0sm"]
 [ext_resource type="Texture2D" uid="uid://crbhqjpv4cu42" path="res://images/Grassland_2 - Hills.png" id="7_t8k16"]
-[ext_resource type="Script" path="res://scripts/Trail.cs" id="8_8gcaj"]
-[ext_resource type="Script" path="res://scripts/LynxCamera.cs" id="8_jpwd7"]
+[ext_resource type="Script" path="res://scripts/trail.gd" id="8_8gcaj"]
+[ext_resource type="Script" path="res://scripts/lynx_camera.gd" id="8_jpwd7"]
 [ext_resource type="PackedScene" uid="uid://dl671m80wufof" path="res://scenes/mob_devo.tscn" id="8_rgqvt"]
 [ext_resource type="Texture2D" uid="uid://bbvj1q06jx5fn" path="res://images/Grassland_1 - Foreground_scenery.png" id="8_wfaae"]
 [ext_resource type="PackedScene" uid="uid://bo2w3wgcimbq5" path="res://scenes/cliff.tscn" id="9_lsuf7"]
 [ext_resource type="PackedScene" uid="uid://c8hmpm33w5hvr" path="res://scenes/mob_bub.tscn" id="10_4yltp"]
-[ext_resource type="Script" path="res://scripts/SpecialArea.cs" id="11_swfys"]
-[ext_resource type="Script" path="res://scripts/SecretArea.cs" id="13_187i2"]
+[ext_resource type="Script" path="res://scripts/special_area.gd" id="11_swfys"]
+[ext_resource type="Script" path="res://scripts/secret_area.gd" id="13_187i2"]
 [ext_resource type="TileSet" uid="uid://0a4uxvcxgk32" path="res://resources/tileset_level_1_fake.tres" id="14_eyoxa"]
-[ext_resource type="Script" path="res://scripts/InteractiveMessage.cs" id="15_vx2ca"]
+[ext_resource type="Script" path="res://scripts/interactive_message.gd" id="15_vx2ca"]
 [ext_resource type="FontFile" uid="uid://g0840nh810ty" path="res://font/at01.ttf" id="16_rysgu"]
 [ext_resource type="Texture2D" uid="uid://jrw5lotk4nom" path="res://images/Twiggy_Running (32 x 32).png" id="16_wucwr"]
 [ext_resource type="Texture2D" uid="uid://cshk8qm07ki4" path="res://images/Mochi_Idle (32 x 32).png" id="17_lb4an"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b527taxguoh6g" path="res://images/Mochi_Running (32 x 32).png" id="18_leeqo"]
 [ext_resource type="Texture2D" uid="uid://8ki3jo7d63fv" path="res://images/Twiggy_Idle (32 x 32).png" id="19_2dfd3"]
 [ext_resource type="PackedScene" uid="uid://c3n15xfsang0g" path="res://scenes/hud.tscn" id="22_rr22h"]
-[ext_resource type="Script" path="res://scripts/CutsceneMode.cs" id="26_8sns2"]
+[ext_resource type="Script" path="res://scripts/cutscene_mode.gd" id="26_8sns2"]
 [ext_resource type="PackedScene" uid="uid://cmas72b0mdbmi" path="res://scenes/game_menu.tscn" id="27_ilrrh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pueox"]
@@ -261,21 +261,21 @@ format = 1
 font = ExtResource("16_rysgu")
 font_size = 28
 
-[node name="level_1" type="Node2D" node_paths=PackedStringArray("leftArea", "cam", "rest", "player", "npc2", "npc2_Dialogue", "npc3", "npc3_Dialogue", "nextLevelPortal", "hud", "pauseMenu", "cutsceneMode")]
+[node name="level_1" type="Node2D" node_paths=PackedStringArray("left_area", "cam", "rest", "player", "npc2", "npc2_dialogue", "npc3", "npc3_dialogue", "next_level_portal", "hud", "pause_menu", "cutscene_mode")]
 texture_filter = 1
 script = ExtResource("1_stky7")
-leftArea = NodePath("SpecialAreas/SpecialLeft")
+left_area = NodePath("SpecialAreas/SpecialLeft")
 cam = NodePath("Camera2D")
 rest = NodePath("SpecialAreas/InteractPointRest")
 player = NodePath("Player")
 npc2 = NodePath("NPC2")
-npc2_Dialogue = NodePath("NPC2/Area2D")
+npc2_dialogue = NodePath("NPC2/Area2D")
 npc3 = NodePath("NPC3")
-npc3_Dialogue = NodePath("NPC3/Area2D")
-nextLevelPortal = NodePath("NextLevel")
+npc3_dialogue = NodePath("NPC3/Area2D")
+next_level_portal = NodePath("NextLevel")
 hud = NodePath("HUD")
-pauseMenu = NodePath("GameMenu")
-cutsceneMode = NodePath("CutsceneMode")
+pause_menu = NodePath("GameMenu")
+cutscene_mode = NodePath("CutsceneMode")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true
@@ -629,30 +629,30 @@ position = Vector2(2856, -8)
 
 [node name="Cliff" type="Node2D" parent="."]
 
-[node name="Cliff2" parent="Cliff" node_paths=PackedStringArray("respawnLocation") instance=ExtResource("9_lsuf7")]
+[node name="Cliff2" parent="Cliff" node_paths=PackedStringArray("respawn_location") instance=ExtResource("9_lsuf7")]
 position = Vector2(592, 64)
 scale = Vector2(3.03423, 1)
-respawnLocation = NodePath("../RespawnLocation2")
+respawn_location = NodePath("../RespawnLocation2")
 
-[node name="Cliff3" parent="Cliff" node_paths=PackedStringArray("respawnLocation") instance=ExtResource("9_lsuf7")]
+[node name="Cliff3" parent="Cliff" node_paths=PackedStringArray("respawn_location") instance=ExtResource("9_lsuf7")]
 position = Vector2(928, 72)
 scale = Vector2(3.8898, -1.16873)
-respawnLocation = NodePath("../RespawnLocation3")
+respawn_location = NodePath("../RespawnLocation3")
 
-[node name="Cliff4" parent="Cliff" node_paths=PackedStringArray("respawnLocation") instance=ExtResource("9_lsuf7")]
+[node name="Cliff4" parent="Cliff" node_paths=PackedStringArray("respawn_location") instance=ExtResource("9_lsuf7")]
 position = Vector2(1392, 64)
 scale = Vector2(13.1492, -1.4858)
-respawnLocation = NodePath("../RespawnLocation4")
+respawn_location = NodePath("../RespawnLocation4")
 
-[node name="Cliff5" parent="Cliff" node_paths=PackedStringArray("respawnLocation") instance=ExtResource("9_lsuf7")]
+[node name="Cliff5" parent="Cliff" node_paths=PackedStringArray("respawn_location") instance=ExtResource("9_lsuf7")]
 position = Vector2(1720, 56)
 scale = Vector2(4.202, 1)
-respawnLocation = NodePath("../RespawnLocation5")
+respawn_location = NodePath("../RespawnLocation5")
 
-[node name="Cliff6" parent="Cliff" node_paths=PackedStringArray("respawnLocation") instance=ExtResource("9_lsuf7")]
+[node name="Cliff6" parent="Cliff" node_paths=PackedStringArray("respawn_location") instance=ExtResource("9_lsuf7")]
 position = Vector2(2080, 56)
 scale = Vector2(4.202, 1)
-respawnLocation = NodePath("../RespawnLocation6")
+respawn_location = NodePath("../RespawnLocation6")
 
 [node name="RespawnLocation2" type="Marker2D" parent="Cliff"]
 visible = false
@@ -885,26 +885,26 @@ label_settings = SubResource("LabelSettings_h070e")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpecialLeft" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SpecialLeft" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 position = Vector2(-680, -88)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("11_swfys")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath(".")
+camera_focus = NodePath(".")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpecialAreas/SpecialLeft"]
 position = Vector2(8.25, 8)
 shape = SubResource("RectangleShape2D_oh5be")
 
-[node name="SecretArea" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SecretArea" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 modulate = Color(1, 1, 1, 0.498039)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_187i2")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath("CollisionPolygon2D")
+camera_focus = NodePath("CollisionPolygon2D")
 metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="SpecialAreas/SecretArea"]
@@ -917,13 +917,13 @@ position = Vector2(1068, -52)
 polygon = PackedVector2Array(11, -21, -97, -22, -95, 68, 77, 68, 76, 6, 17, 7)
 metadata/Zoom = Vector2(4, 4)
 
-[node name="SecretArea2" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SecretArea2" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 modulate = Color(1, 1, 1, 0.6)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_187i2")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath("CollisionShape2D")
+camera_focus = NodePath("CollisionShape2D")
 metadata/_edit_group_ = true
 metadata/Zoom = Vector2(4, 4)
 
@@ -937,13 +937,13 @@ position = Vector2(1264, -349.5)
 shape = SubResource("RectangleShape2D_vex3t")
 metadata/Zoom = Vector2(4, 4)
 
-[node name="SecretArea5" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SecretArea5" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 modulate = Color(1, 1, 1, 0.486275)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_187i2")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath("CollisionShape2D")
+camera_focus = NodePath("CollisionShape2D")
 metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="SpecialAreas/SecretArea5"]
@@ -956,13 +956,13 @@ position = Vector2(1513.5, -245)
 shape = SubResource("RectangleShape2D_x3lgy")
 metadata/Zoom = Vector2(4, 4)
 
-[node name="SecretArea3" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SecretArea3" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 modulate = Color(1, 1, 1, 0.466667)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_187i2")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath("CollisionShape2D")
+camera_focus = NodePath("CollisionShape2D")
 metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="SpecialAreas/SecretArea3"]
@@ -975,13 +975,13 @@ position = Vector2(2280.5, -79.5)
 shape = SubResource("RectangleShape2D_3u4mb")
 metadata/Zoom = Vector2(4, 4)
 
-[node name="SecretArea4" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SecretArea4" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 modulate = Color(1, 1, 1, 0.670588)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_187i2")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath("CollisionShape2D")
+camera_focus = NodePath("CollisionShape2D")
 metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="SpecialAreas/SecretArea4"]
@@ -994,13 +994,13 @@ position = Vector2(1894.75, -19)
 shape = SubResource("RectangleShape2D_v5jm0")
 metadata/Zoom = Vector2(4, 4)
 
-[node name="SecretArea6" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "cameraFocus")]
+[node name="SecretArea6" type="Area2D" parent="SpecialAreas" node_paths=PackedStringArray("cam", "camera_focus")]
 modulate = Color(1, 1, 1, 0.670588)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("13_187i2")
 cam = NodePath("../../Camera2D")
-cameraFocus = NodePath("CollisionShape2D")
+camera_focus = NodePath("CollisionShape2D")
 metadata/_edit_group_ = true
 
 [node name="TileMap" type="TileMap" parent="SpecialAreas/SecretArea6"]
@@ -1029,13 +1029,13 @@ debug_color = Color(0.517647, 0.568627, 0.298039, 0.419608)
 stream = SubResource("AudioStreamWAV_2mjlj")
 
 [node name="GameMenu" parent="." instance=ExtResource("27_ilrrh")]
-windowScaleButtons = SubResource("ButtonGroup_oue5u")
-pauseMenuMode = true
+window_scale_buttons = SubResource("ButtonGroup_oue5u")
+pause_menu_mode = true
 
-[node name="CutsceneMode" type="CanvasLayer" parent="." node_paths=PackedStringArray("topBar", "bottomBar")]
+[node name="CutsceneMode" type="CanvasLayer" parent="." node_paths=PackedStringArray("top_bar", "bottom_bar")]
 script = ExtResource("26_8sns2")
-topBar = NodePath("TopBar")
-bottomBar = NodePath("BottomBar")
+top_bar = NodePath("TopBar")
+bottom_bar = NodePath("BottomBar")
 
 [node name="TopBar" type="ColorRect" parent="CutsceneMode"]
 custom_minimum_size = Vector2(0, 64)

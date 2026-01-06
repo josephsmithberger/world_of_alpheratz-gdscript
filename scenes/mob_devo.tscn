@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl671m80wufof"]
 
-[ext_resource type="Script" path="res://scripts/MobDevo.cs" id="1_12ee4"]
+[ext_resource type="Script" path="res://scripts/mob_devo.gd" id="1_12ee4"]
 [ext_resource type="SpriteFrames" uid="uid://ohjfqkb03m7x" path="res://resources/sprite_frames_mob_devo.tres" id="2_tsf6h"]
-[ext_resource type="Script" path="res://scripts/Killer.cs" id="3_gcfck"]
+[ext_resource type="Script" path="res://scripts/killer.gd" id="3_gcfck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_143hk"]
 size = Vector2(12, 15)
@@ -10,13 +10,13 @@ size = Vector2(12, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxvvs"]
 size = Vector2(16, 13)
 
-[node name="MobDevo" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite2D", "collisionShape2D", "playerKiller")]
+[node name="MobDevo" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite_2d", "collision_shape_2d", "player_killer")]
 collision_layer = 4
 collision_mask = 5
 script = ExtResource("1_12ee4")
-animatedSprite2D = NodePath("AnimatedSprite2D")
-collisionShape2D = NodePath("CollisionShape2D")
-playerKiller = NodePath("Area2D")
+animated_sprite_2d = NodePath("AnimatedSprite2D")
+collision_shape_2d = NodePath("CollisionShape2D")
+player_killer = NodePath("Area2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -7.5)
