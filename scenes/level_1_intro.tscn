@@ -8,11 +8,10 @@ script/source = "extends Control
 
 
 func _ready() -> void:
-	GameWorld.PlayBGM(\"\", 0)
+	GameWorld.play_bgm(\"\", 0)
 	create_tween().tween_callback(
 		func():
-			# you should pass all parameters if it's a c# script.
-			GameWorld.ChangeScene(\"res://levels/level_1.tscn\", 0.4)
+			GameWorld.change_scene(\"res://levels/level_1.tscn\", 0.4)
 	).set_delay(2.0)
 "
 

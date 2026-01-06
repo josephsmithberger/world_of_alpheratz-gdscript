@@ -10,9 +10,9 @@ script/source = "extends Control
 func _ready() -> void:
 	create_tween().tween_callback(
 		func():
-			GameWorld.ChangeScene(\"res://levels/level_2.tscn\", 0.4)
+			GameWorld.change_scene(\"res://levels/level_2.tscn\", 0.4)
 	).set_delay(2.0)
-	GameWorld.PlayBGM(\"res://sounds/bgm_Sunset Beach!_ Groovey Boardwalk Game Music.mp3\", 1.0)
+	GameWorld.play_bgm(\"res://sounds/bgm_Sunset Beach!_ Groovey Boardwalk Game Music.mp3\", 1.0)
 "
 
 [sub_resource type="LabelSettings" id="LabelSettings_qhc5n"]
