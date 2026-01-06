@@ -1,10 +1,45 @@
 # Introduction
 
-World of Alpheratz is a simple retro platformer demo game made with Godot 4.1 (.Net Version)
+World of Alpheratz is a simple retro platformer demo game made with Godot 4.1
+(.Net Version).
 
-Currently it has only one level with basic mechanics, if you guys like it I will continue to develop it in my free time or contact me if you want to help me with the development (it will not be a commercial game).
+This repository is a **GDScript port** of the original **World of Alpheratz**
+project.
 
-The project (art is not inclueded, they have seperate licenses, see `assets_source.md`) is under MIT license, so you can use it as a base for your own game and I am glad if you do so.
+## About this fork
+
+The original project was written in C# and targets the .NET-enabled version of
+Godot. 
+
+This fork ports the game logic to **GDScript** so that the project can:
+
+- Run on **stock (non-.NET) Godot builds**
+- Run on **Xogot: Godot for iPad and iPhone**, which does not support .NET
+
+The goal of this port is functional parity with the original project while
+keeping the codebase accessible to platforms and environments where C#/.NET is
+not available.
+
+## Original project
+
+This work is based on the original **World of Alpheratz** repository:
+
+- Original repository: https://github.com/ORIGINAL_AUTHOR/world_of_alpheratz
+
+All core gameplay concepts, structure, and assets originate from the original
+project.  
+This fork focuses specifically on translating the implementation from **C# to
+GDScript**.
+
+## Project status
+
+Currently it has only one level with basic mechanics, if you guys like it I will
+continue to develop it in my free time or contact me if you want to help me with
+the development (it will not be a commercial game).
+
+The project (art is not inclueded, they have seperate licenses, see
+`assets_source.md`) is under MIT license, so you can use it as a base for your
+own game and I am glad if you do so.
 
 # Preview
 
