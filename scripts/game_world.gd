@@ -161,11 +161,43 @@ func load_config() -> void:
 	InputMap.add_action(INPUT_ACTION_INTERACT)
 	InputMap.action_add_event(INPUT_ACTION_INTERACT, key_event)
 
+	_apply_controller_bindings()
+
 	apply_resolution()
 
 	# Apply sound settings
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("BGM"), linear_to_db(config_file.get_value(CONFIG_SECTION_MISC, MISC_BGM)))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(config_file.get_value(CONFIG_SECTION_MISC, MISC_SE)))
+
+
+func _apply_controller_bindings() -> void:
+	# UI actions already receive Godot's default gamepad mappings. Gameplay uses
+	# separate actions, so explicitly give those actions equivalent controller input.
+	_add_controller_button(INPUT_ACTION_LEFT, JOY_BUTTON_DPAD_LEFT)
+	_add_controller_button(INPUT_ACTION_RIGHT, JOY_BUTTON_DPAD_RIGHT)
+	_add_controller_button(INPUT_ACTION_DOWN, JOY_BUTTON_DPAD_DOWN)
+	_add_controller_axis(INPUT_ACTION_LEFT, JOY_AXIS_LEFT_X, -1.0)
+	_add_controller_axis(INPUT_ACTION_RIGHT, JOY_AXIS_LEFT_X, 1.0)
+	_add_controller_axis(INPUT_ACTION_UP, JOY_AXIS_LEFT_Y, -1.0)
+	_add_controller_axis(INPUT_ACTION_DOWN, JOY_AXIS_LEFT_Y, 1.0)
+
+	# A / Cross is the platformer jump button; X / Square is used to interact.
+	_add_controller_button(INPUT_ACTION_UP, JOY_BUTTON_A)
+	_add_controller_button(INPUT_ACTION_INTERACT, JOY_BUTTON_X)
+
+
+func _add_controller_button(input_action: StringName, button: JoyButton) -> void:
+	var event := InputEventJoypadButton.new()
+	event.button_index = button
+	event.pressed = true
+	InputMap.action_add_event(input_action, event)
+
+
+func _add_controller_axis(input_action: StringName, axis: JoyAxis, axis_value: float) -> void:
+	var event := InputEventJoypadMotion.new()
+	event.axis = axis
+	event.axis_value = axis_value
+	InputMap.action_add_event(input_action, event)
 
 
 func apply_resolution() -> void:
